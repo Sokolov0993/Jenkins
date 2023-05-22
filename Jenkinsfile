@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('SCM checkout') {
             steps {
-                git 'https://github.com/Sokolov0993/Jenkins-Test'
+                git 'https://github.com/Sokolov0993/JenkinsCI'
             }
         }
         
@@ -42,7 +42,7 @@ pipeline {
                     slackMessage += "\nSkipped Tests: ${skippedTests}"
                     slackMessage += "\n\nBuild details: [${env.JOB_NAME} #${env.BUILD_NUMBER}](${env.BUILD_URL})"
                     
-                    slackSend(channel: 'project', message: slackMessage)
+                    slackSend(channel: 'U04P5KR3H8S', message: slackMessage)
                 }
             }
         }
